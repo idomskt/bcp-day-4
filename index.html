@@ -18,8 +18,8 @@
             <input name="power" type="radio"> triangle
     </label>
     <label>
-            <input name="another name" type="radio"> different name
     </label>
+        <input onchange="change()">
     <select name="" id="">
             <option value="">red</option>
             <option value="">red</option>
@@ -28,11 +28,18 @@
             <option value="">red</option>
     </select>
 
-    <button>click me</button>
+    <button onclick="count()">click me</button>
 
     <script>
-        for(var i = 0; i < 10; i++){
-            console.log(i + 1);
+
+        function count(){   
+            for(var i = 0; i < 10; i++){
+                console.log(i + 1);
+            }
+        }
+
+        function change() {
+            console.log('it changed');
         }
     </script>
 </body>
