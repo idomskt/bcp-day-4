@@ -7,55 +7,46 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>form</h1>
-    <label>
-            <input name="power" type="radio"> cube
-    </label>
-    <label>
-            <input name="power" type="radio"> square
-    </label>
-    <label>
-            <input name="power" type="radio"> triangle
-    </label>
-    <label>
-    </label>
-        <input onchange="change()">
-    <select name="" id="">
-            <option value="">red</option>
-            <option value="">red</option>
-            <option value="">red</option>
-            <option value="">red</option>
-            <option value="">red</option>
-    </select>
+    <input type="number" name="" id="name">
+    
 
-    <button onclick="count()">click me</button>
-    
-    <button onclick="showName()">click me</button>
-    
-    <input id="name" type="text">
-    
-    <p id="results"></p>
-    
+    <div id="number"> 
+        <label for="">
+            <input type="radio" name="number" id="" value="2">2
+        </label>
+        <label for="">
+            <input type="radio" name="number" id="" value="3">3
+        </label>
+        <label for="">
+            <input type="radio" name="number" id="" value="4">5
+        </label>
+        <label for="">
+            <input type="radio" name="number" id="" value="5">5
+        </label>
+
+    <button id="calculate" onclick="calculate()">Calculate</button>
+    <p id="results"></p>    
     <script>
-        function showName() {
-            var input = document.getElementById('name');
-            var name = input.value;
+        function calculate() {
+            var input = document.getElementById("name");
+            var textValue = parseInt(input.value);
+            console.log(textValue);
 
-            var p = document.getElementById('results');
-            p.innerText = 'your name is ' + name;
-            p.style.backgroundColor = 'blue';
-        }
+            var radio = document.querySelector('input[name=number]:checked')
+            var radioValue = parseInt(radio.value);
+            console.log(radioValue);
 
-        function count(){   
-            for(var i = 0; i < 10; i++){
-                console.log(i + 1);
+            var answer = Math.pow(textValue, radioValue);
+            
+            if(textValue && radioValue) {
+                console.log('the value of both is ' + answer);
+            } else {
+                console.log('please choose both');
             }
+            
+            var displayResults = document.getElementById('results');
+            displayResults.innerHTML('nice job');
         }
-
-        function change() {
-            console.log('it changed');
-        }
-
     </script>
 </body>
 </html>
