@@ -29,8 +29,20 @@
     </select>
 
     <button onclick="count()">click me</button>
+    <button onclick="showName()">click me</button>
+        <input id="name" type="text">
+    
 
+    <p id="results"></p>
     <script>
+        function showName() {
+            var input = document.getElementById('name');
+            var name = input.value;
+
+            var p = document.getElementById('results');
+            p.innerText = 'your name is' + name;
+            
+        }
 
         function count(){   
             for(var i = 0; i < 10; i++){
@@ -41,6 +53,7 @@
         function change() {
             console.log('it changed');
         }
+
     </script>
 </body>
 </html>
